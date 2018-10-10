@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_payment/widgets/bank_card.dart';
+import 'package:flutter_payment/models/bank_card_model.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -6,7 +8,12 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-
+  final List<BankCardModel> cards = [
+    BankCardModel('images/bg_red_card.png', 'Nguyen Van Hung', '4221 5168 7464 2283', '08/20', 10000000),
+    BankCardModel('images/bg_blue_circle_card.png', 'Nguyen Van Hung', '4221 5168 7464 2283', '08/20', 10000000),
+    BankCardModel('images/bg_purple_card.png', 'Nguyen Van Hung', '4221 5168 7464 2283', '08/20', 10000000),
+    BankCardModel('images/bg_blue_card.png', 'Nguyen Van Hung', '4221 5168 7464 2283', '08/20', 10000000),
+  ];
   double screenWidth = 0.0;
 
   @override
@@ -50,6 +57,7 @@ class _HomePageState extends State<HomePage> {
                   child: Text('H'),
                 ),
                 Container(
+                  margin: EdgeInsets.symmetric(horizontal: 4.0),
                   child: Text('HungNV', style: TextStyle(fontFamily: 'Poppins', fontWeight: FontWeight.w700),),
                 )
               ],
@@ -83,7 +91,29 @@ class _HomePageState extends State<HomePage> {
   }
 
   Widget _userBankCardsWidget() {
-
+    return Container(
+      margin: EdgeInsets.only(top: 20.0),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: <Widget>[
+          Padding(
+            padding: EdgeInsets.symmetric(horizontal: 16.0, vertical: 15.0),
+            child: Text('My Bank Accounts'),
+          ),
+          Container(
+            margin: EdgeInsets.symmetric(horizontal: 8.0),
+            height: 166.0,
+            child: ListView.builder(
+              scrollDirection: Axis.horizontal,
+              itemCount: 4,
+              itemBuilder: (BuildContext context, int index) {
+                return _getBankCard(index);
+              },
+            ),
+          )
+        ],
+      ),
+    );
   }
 
   Widget _sendMoneySectionWidget() {
@@ -94,4 +124,10 @@ class _HomePageState extends State<HomePage> {
 
   }
 
+  Widget _getBankCard(int index) {
+    return Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: BankCard(card: cards[index],),
+    );
+  }
 }
