@@ -127,7 +127,7 @@ class _HomePageState extends State<HomePage> {
   Widget _getBankCard(int index) {
     return Padding(
       padding: const EdgeInsets.all(8.0),
-      child: BankCard(card: cards[index],),
+      child: BankCard(card: cards[index]),
     );
   }
 }
