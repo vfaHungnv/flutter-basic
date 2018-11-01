@@ -110,18 +110,237 @@ class _HomePageState extends State<HomePage> {
                 return _getBankCard(index);
               },
             ),
-          )
+          ),
+          Container(
+            height: 80.0,
+            margin: EdgeInsets.symmetric(horizontal: 16.0, vertical: 15.0),
+            child: Row(
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: <Widget>[
+                Expanded(
+                  child: GestureDetector(
+                    onTapUp: (tapDetail) {
+                      //TODO: SelectAccountPageRoute()
+                      // Navigator.push(context, route)
+                    },
+                    child: Card(
+                      child: Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Row(
+                          children: <Widget>[
+                            Image.asset('images/ico_send_money.png'),
+                            Padding(
+                              padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                              child: Text('Send\nmoney', style: TextStyle(fontWeight: FontWeight.w700),),
+                            )
+                          ],
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+                Expanded(
+                  child: GestureDetector(
+                    onTapUp: (tapDetail) {
+                      //TODO: SelectAccountPageRoute()
+                      // Navigator.push(context, route)
+                    },
+                    child: Card(
+                      child: Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Row(
+                          children: <Widget>[
+                            Image.asset('images/ico_receive_money.png'),
+                            Padding(
+                              padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                              child: Text('Receive\nmoney', style: TextStyle(fontWeight: FontWeight.w700),),
+                            )
+                          ],
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ),
         ],
       ),
     );
   }
 
   Widget _sendMoneySectionWidget() {
-
+    var smallItemPadding = EdgeInsets.only(left: 12.0, right: 12.0, top: 12.0);
+    if (screenWidth <= 320) {
+      smallItemPadding = EdgeInsets.only(left: 10.0, right: 10.0, top: 12.0);
+    }
+    return Container(
+      margin: EdgeInsets.all(16.0),
+      child: Column(
+        children: <Widget>[
+          Row(
+            children: <Widget>[
+              Expanded(
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(vertical: 8.0),
+                  child: Text('Send money to', style: TextStyle(fontSize: 14.0, fontWeight: FontWeight.bold),),
+                ),
+              ),
+              GestureDetector(
+                onTap: null,
+                child: Text('View all'),
+              ),
+            ],
+          ),
+          Container(
+            height: 100.0,
+            child: Card(
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: <Widget>[
+                  Padding(
+                    padding: smallItemPadding,
+                    child: Column(
+                      children: <Widget>[
+                        Image.asset('images/ico_add_new.png', height: 40.0),
+                        Padding(
+                          padding: const EdgeInsets.only(top: 8.0),
+                          child: Text('Add new'),
+                        ),
+                      ],
+                    ),
+                  ),
+                  Padding(
+                    padding: smallItemPadding,
+                    child: Column(
+                      children: <Widget>[
+                        CircleAvatar(
+                          child: Text('S'),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.only(top: 8.0),
+                          child: Text('Salina'),
+                        ),
+                      ],
+                    ),
+                  ),
+                  Padding(
+                    padding: smallItemPadding,
+                    child: Column(
+                      children: <Widget>[
+                        CircleAvatar(
+                          child: Text('E'),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.only(top: 8.0),
+                          child: Text('Emily'),
+                        ),
+                      ],
+                    ),
+                  ),
+                  Padding(
+                    padding: smallItemPadding,
+                    child: Column(
+                      children: <Widget>[
+                        CircleAvatar(
+                          child: Text('N'),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.only(top: 8.0),
+                          child: Text('Nichole'),
+                        ),
+                      ],
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
   }
 
   Widget _utilitesSectionWidget() {
-
+    var smallItemPadding = EdgeInsets.only(left: 12.0, right: 12.0, top: 12.0);
+    if (screenWidth <= 320) {
+      smallItemPadding = EdgeInsets.only(left: 10.0, right: 10.0, top: 12.0);
+    }
+    return Container(
+      margin: EdgeInsets.all(16.0),
+      child: Column(
+        children: <Widget>[
+          Row(
+            children: <Widget>[
+              Expanded(
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(vertical: 8.0),
+                  child: Text('Utilities', style: TextStyle(fontSize: 14.0, fontWeight: FontWeight.w700),),
+                ),
+              )
+            ],
+          ),
+          Container(
+            height: 80.0,
+            child: Card(
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: <Widget>[
+                  Padding(
+                    padding: smallItemPadding,
+                    child: Column(
+                      children: <Widget>[
+                        Image.asset('images/ico_pay_phone.png', height: 26.0),
+                        Padding(
+                          padding: const EdgeInsets.only(top: 8.0),
+                          child: Text('Mobile', style: TextStyle(fontSize: 12.0),),
+                        ),
+                      ],
+                    ),
+                  ),
+                  Padding(
+                    padding: smallItemPadding,
+                    child: Column(
+                      children: <Widget>[
+                        Image.asset('images/ico_pay_elect.png', height: 26.0),
+                        Padding(
+                          padding: const EdgeInsets.only(top: 8.0),
+                          child: Text('Mobile', style: TextStyle(fontSize: 12.0),),
+                        ),
+                      ],
+                    ),
+                  ),
+                  Padding(
+                    padding: smallItemPadding,
+                    child: Column(
+                      children: <Widget>[
+                        Image.asset('images/ico_pay_broad.png', height: 26.0),
+                        Padding(
+                          padding: const EdgeInsets.only(top: 8.0),
+                          child: Text('Mobile', style: TextStyle(fontSize: 12.0),),
+                        ),
+                      ],
+                    ),
+                  ),
+                  Padding(
+                    padding: smallItemPadding,
+                    child: Column(
+                      children: <Widget>[
+                        Image.asset('images/ico_pay_gas.png', height: 26.0),
+                        Padding(
+                          padding: const EdgeInsets.only(top: 8.0),
+                          child: Text('Mobile', style: TextStyle(fontSize: 12.0),),
+                        ),
+                      ],
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
   }
 
   Widget _getBankCard(int index) {
