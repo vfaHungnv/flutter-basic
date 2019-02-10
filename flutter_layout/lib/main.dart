@@ -29,7 +29,7 @@ class MyApp extends StatelessWidget {
               ],
             ),
           ),
-          new Icon(Icons.favorite, color: Colors.red),
+          new Icon(Icons.star, color: Colors.red),
           new Text(" 41", style: new TextStyle(fontSize: 16.0)),
         ],
       ),

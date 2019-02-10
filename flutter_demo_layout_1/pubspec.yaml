@@ -1,4 +1,4 @@
-name: flutter_gridview
+name: flutter_demo_layout_1
 description: A new Flutter project.
 
 # The following defines the version and build number for your application.
@@ -37,22 +37,8 @@ flutter:
   uses-material-design: true
 
   # To add assets to your application, add an assets section, like this:
-assets:
-    - images/image_1.JPG
-    - images/image_2.JPG
-    - images/image_3.JPG
-    - images/image_4.JPG
-    - images/image_5.JPG
-    - images/image_6.JPG
-    - images/image_7.JPG
-    - images/image_8.JPG
-    - images/image_9.JPG
-    - images/image_10.JPG
-    - images/image_11.JPGs
-    - images/image_12.JPG
-    - images/image_13.JPG
-    - images/image_14.JPG
-    - images/image_15.JPG
+  # assets:
+  #  - images/a_dot_burr.jpeg
   #  - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
