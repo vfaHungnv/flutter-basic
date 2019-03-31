@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/gestures.dart';
+import 'package:fl_uberapp/scr/resources/register_page.dart';
 
 class LoginPage extends StatefulWidget {
   @override
@@ -35,8 +37,84 @@ class _LoginPageState extends State<LoginPage> {
                  padding: const EdgeInsets.fromLTRB(0, 145, 0, 20),
                  child: TextField(
                    style: TextStyle(fontSize: 18, color: Colors.black),
+                   decoration: InputDecoration(
+                     labelText: "Email",
+                     prefixIcon: Container(
+                       width: 50,
+                       child: Image.asset("ic_mail.png"),
+                     ),
+                     border: OutlineInputBorder(
+                       borderSide: BorderSide(color: Color(0xffCED0D2), width: 1),
+                       borderRadius: BorderRadius.all(Radius.circular(6))
+                     ),
+                   ),
                  ),
-               )
+               ),
+               TextField(
+                 style: TextStyle(fontSize: 18, color: Colors.black),
+                 obscureText: true,
+                 decoration: InputDecoration(
+                   labelText: "Password",
+                   prefixIcon: Container(
+                     width: 50,
+                     child: Image.asset("ic_phone.png"),
+                   ),
+                   border: OutlineInputBorder(
+                     borderSide: BorderSide(color: Color(0xffCED0D2), width: 1),
+                     borderRadius: BorderRadius.all(Radius.circular(6))
+                   ),
+                 ),
+               ),
+               Container(
+                 constraints: BoxConstraints.loose(Size(double.infinity, 30)),
+                 alignment: AlignmentDirectional.centerEnd,
+                 child: Padding(
+                   padding: const EdgeInsets.only(top: 20),
+                   child: Text(
+                     "Forgot password?",
+                     style: TextStyle(fontSize: 16, color: Color(0xff606470)),
+                   ),
+                 ),
+               ),
+               Padding(
+                 padding: const EdgeInsets.fromLTRB(0, 30, 0, 40),
+                 child: SizedBox(
+                   width: double.infinity,
+                   height: 52,
+                   child: RaisedButton(
+                     onPressed: () {
+
+                     },
+                     child: Text(
+                       "Log In",
+                       style: TextStyle(color: Colors.white, fontSize: 18),
+                     ),
+                     color: Color(0xff3277D8),
+                     shape: RoundedRectangleBorder(
+                       borderRadius: BorderRadius.all(Radius.circular(6))
+                     ),
+                   ),
+                 ),
+               ),
+               Padding(
+                 padding: const EdgeInsets.only(bottom: 40),
+                 child: RichText(
+                   text: TextSpan(
+                     text: "New user? ",
+                     style: TextStyle(color: Color(0xff606470), fontSize: 16),
+                     children: <TextSpan>[
+                       TextSpan(
+                         recognizer: TapGestureRecognizer()
+                         ..onTap = () {
+                           Navigator.push(context, MaterialPageRoute(builder: (context) => RegisterPage()));
+                          },
+                         text: "Sign up for a new account",
+                         style: TextStyle(color: Color(0xff3277D8), fontSize: 16)
+                       ),
+                     ]
+                   ),
+                 ),
+               ),
              ],
            ),
          ),
