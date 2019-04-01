@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>AD_UNIT_ID_FOR_BANNER_TEST</key>
+	<string>ca-app-pub-3940256099942544/2934735716</string>
+	<key>AD_UNIT_ID_FOR_INTERSTITIAL_TEST</key>
+	<string>ca-app-pub-3940256099942544/4411468910</string>
+	<key>CLIENT_ID</key>
+	<string>804579292363-eruer0fim2egatu7dilopc44qpqoqhgk.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.804579292363-eruer0fim2egatu7dilopc44qpqoqhgk</string>
+	<key>API_KEY</key>
+	<string>AIzaSyD3WWajkUY06lrCVAe9qIn--QWHn67tywM</string>
+	<key>GCM_SENDER_ID</key>
+	<string>804579292363</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>asia.vitalify.flUberapp</string>
+	<key>PROJECT_ID</key>
+	<string>uber-app-fcacf</string>
+	<key>STORAGE_BUCKET</key>
+	<string>uber-app-fcacf.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<true></true>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:804579292363:ios:155c62e72fe8fd7a</string>
+	<key>DATABASE_URL</key>
+	<string>https://uber-app-fcacf.firebaseio.com</string>
+</dict>
+</plist>
