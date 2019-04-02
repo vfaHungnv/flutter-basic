@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/gestures.dart';
+import 'package:fl_uberapp/scr/blocs/auth_bloc.dart';
 
 class RegisterPage extends StatefulWidget {
   @override
@@ -7,6 +8,19 @@ class RegisterPage extends StatefulWidget {
 }
 
 class _RegisterPageState extends State<RegisterPage> {
+  AuthBloc authBloc = new AuthBloc();
+
+  TextEditingController _nameController = new TextEditingController();
+  TextEditingController _emailController = new TextEditingController();
+  TextEditingController _passController = new TextEditingController();
+  TextEditingController _phoneController = new TextEditingController();
+
+  @override
+  void dispose() {
+    authBloc.dispose();
+    super.dispose();
+  }
+  
   @override
   Widget build(BuildContext context) {
     return Scaffold(
