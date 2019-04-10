@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/gestures.dart';
 import 'package:fl_uberapp/scr/blocs/auth_bloc.dart';
+import 'package:fl_uberapp/scr/fire_base/fire_base_auth.dart';
+import 'package:fl_uberapp/scr/resources/home_page.dart';
 
 class RegisterPage extends StatefulWidget {
   @override
@@ -150,7 +152,7 @@ class _RegisterPageState extends State<RegisterPage> {
                    height: 52,
                    child: RaisedButton(
                      onPressed: () {
-
+                       _onSignUpClicked();
                      },
                      child: Text(
                        "Signup",
@@ -187,5 +189,14 @@ class _RegisterPageState extends State<RegisterPage> {
         ),
       ),
     );
+  }
+
+  _onSignUpClicked() {
+    var isValid = authBloc.isValid(_nameController.text, _emailController.text, _passController.text, _phoneController.text);
+    if (isValid) {
+      authBloc.signUp(_emailController.text, _passController.text, _nameController.text, _phoneController.text, () {
+        Navigator.push(context, MaterialPageRoute(builder: (context) => HomePage()));
+      });
+    }
   }
 }
