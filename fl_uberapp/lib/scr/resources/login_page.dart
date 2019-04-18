@@ -8,6 +8,9 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
+  TextEditingController _emailController = new TextEditingController();
+  TextEditingController _passController = new TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -36,6 +39,7 @@ class _LoginPageState extends State<LoginPage> {
                Padding(
                  padding: const EdgeInsets.fromLTRB(0, 145, 0, 20),
                  child: TextField(
+                   controller: _emailController,
                    style: TextStyle(fontSize: 18, color: Colors.black),
                    decoration: InputDecoration(
                      labelText: "Email",
@@ -51,6 +55,7 @@ class _LoginPageState extends State<LoginPage> {
                  ),
                ),
                TextField(
+                 controller: _passController,
                  style: TextStyle(fontSize: 18, color: Colors.black),
                  obscureText: true,
                  decoration: InputDecoration(
@@ -83,7 +88,7 @@ class _LoginPageState extends State<LoginPage> {
                    height: 52,
                    child: RaisedButton(
                      onPressed: () {
-
+                       _onLoginClick();
                      },
                      child: Text(
                        "Log In",
@@ -120,5 +125,10 @@ class _LoginPageState extends State<LoginPage> {
          ),
        ),
     );
+  }
+
+  void _onLoginClick () {
+    String email = _emailController.text;
+    String pass = _passController.text;
   }
 }

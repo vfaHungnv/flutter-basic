@@ -3,6 +3,8 @@ import 'package:flutter/gestures.dart';
 import 'package:fl_uberapp/scr/blocs/auth_bloc.dart';
 import 'package:fl_uberapp/scr/fire_base/fire_base_auth.dart';
 import 'package:fl_uberapp/scr/resources/home_page.dart';
+import 'package:fl_uberapp/scr/resources/dialog/loading_dialog.dart';
+import 'package:fl_uberapp/scr/resources/dialog/msg_dialog.dart';
 
 class RegisterPage extends StatefulWidget {
   @override
@@ -194,9 +196,20 @@ class _RegisterPageState extends State<RegisterPage> {
   _onSignUpClicked() {
     var isValid = authBloc.isValid(_nameController.text, _emailController.text, _passController.text, _phoneController.text);
     if (isValid) {
+      // Loading dialog
+      LoadingDialog.showLoadingDialog(context, "Loading...");
+
+      // Create user
       authBloc.signUp(_emailController.text, _passController.text, _nameController.text, _phoneController.text, () {
+        LoadingDialog.hideLoadingDialog(context);
         Navigator.push(context, MaterialPageRoute(builder: (context) => HomePage()));
+      }, (msg) {
+        LoadingDialog.hideLoadingDialog(context);
+        //Show msg dialog
+        MsgDiaLog.showMsgDialog(context, "SignUp", msg);
       });
     }
   }
+
+
 }
