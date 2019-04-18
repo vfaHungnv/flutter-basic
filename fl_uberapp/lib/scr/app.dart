@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:fl_uberapp/scr/resources/login_page.dart';
 import 'package:fl_uberapp/scr/blocs/auth_bloc.dart';
 
 class MyApp extends InheritedWidget {

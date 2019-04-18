@@ -86,7 +86,7 @@ DEPENDENCIES:
   - Flutter (from `.symlinks/flutter/ios`)
 
 SPEC REPOS:
-  https://github.com/CocoaPods/Specs.git:
+  https://github.com/cocoapods/specs.git:
     - Firebase
     - FirebaseAnalytics
     - FirebaseAuth
@@ -130,4 +130,4 @@ SPEC CHECKSUMS:
 
 PODFILE CHECKSUM: 3389836f37640698630b8f0670315d626d5f1469
 
-COCOAPODS: 1.5.0
+COCOAPODS: 1.6.0.beta.1

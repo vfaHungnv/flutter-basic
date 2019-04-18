@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/gestures.dart';
 import 'package:fl_uberapp/scr/resources/register_page.dart';
+import 'package:fl_uberapp/scr/app.dart';
+import 'package:fl_uberapp/scr/resources/dialog/loading_dialog.dart';
+import 'package:fl_uberapp/scr/resources/home_page.dart';
+import 'package:fl_uberapp/scr/resources/dialog/msg_dialog.dart';
 
 class LoginPage extends StatefulWidget {
   @override
@@ -127,8 +131,18 @@ class _LoginPageState extends State<LoginPage> {
     );
   }
 
-  void _onLoginClick () {
+  void _onLoginClick() {
     String email = _emailController.text;
     String pass = _passController.text;
+    var authBloc = MyApp.of(context).authBloc;
+
+    LoadingDialog.showLoadingDialog(context, "Loading...");
+    authBloc.signIn(email, pass, () {
+      LoadingDialog.hideLoadingDialog(context);
+      Navigator.of(context).push(MaterialPageRoute(builder: (context) => HomePage()));
+    }, (msg) {
+      LoadingDialog.hideLoadingDialog(context);
+      MsgDiaLog.showMsgDialog(context, "Sign-In", msg);
+    });
   }
 }
