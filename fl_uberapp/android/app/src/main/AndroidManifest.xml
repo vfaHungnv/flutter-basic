@@ -10,6 +10,10 @@
         android:name="io.flutter.app.FlutterApplication"
         android:label="fl_uberapp"
         android:icon="@mipmap/ic_launcher">
+
+        <meta-data android:name="com.google.android.geo.API_KEY"
+               android:value="AIzaSyBvLSBjP3yOW7r6ECwH2PawinhZ335qWCo"/>
+        
         <activity
             android:name=".MainActivity"
             android:launchMode="singleTop"
