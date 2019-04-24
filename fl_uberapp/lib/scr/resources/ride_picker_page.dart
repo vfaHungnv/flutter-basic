@@ -90,14 +90,11 @@ class _RidePickerPageState extends State<RidePickerPage> {
                 stream: placeBloc.placeStream,
                 builder: (context, snapshot) {
                   if (snapshot.hasData) {
-                    print(snapshot.data.toString());
                     if (snapshot.data == "start") {
                       return Center(
                         child: CircularProgressIndicator(),
                       );
                     }
-
-                    print(snapshot.data.toString());
                     List<PlaceItemRes> places = snapshot.data;
                     return ListView.separated(
                       shrinkWrap: true,
@@ -106,7 +103,6 @@ class _RidePickerPageState extends State<RidePickerPage> {
                           title: Text(places.elementAt(index).name),
                           subtitle: Text(places.elementAt(index).address),
                           onTap: () {
-                            print("On tap");
                             Navigator.of(context).pop();
                             widget.onSelected(places.elementAt(index), widget._isFromAddress);
                           },

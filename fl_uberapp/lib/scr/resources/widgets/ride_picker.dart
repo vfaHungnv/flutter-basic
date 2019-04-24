@@ -40,8 +40,7 @@ class _RidePickerState extends State<RidePicker> {
                   RidePickerPage(fromAddress == null ? "" : fromAddress.name, (place, isFrom) {
                     widget.onSelected(place, isFrom);
                     fromAddress = place;
-                    setState(() {
-                    });
+                    setState(() {});
                   }, true)
                 ));
               },
@@ -70,10 +69,10 @@ class _RidePickerState extends State<RidePicker> {
                     Padding(
                       padding: EdgeInsets.only(left: 40, right: 50),
                       child: Text(
-                        "From",
+                        fromAddress == null ? "From" : fromAddress.name,
                         style: TextStyle(fontSize: 16, color: Color(0xff323643)),
                         overflow: TextOverflow.ellipsis,
-                        ),
+                      ),
                     )
                   ],
                 ),
@@ -90,8 +89,7 @@ class _RidePickerState extends State<RidePicker> {
                   RidePickerPage(toAddress == null ? "" : toAddress.name, (place, isTo) {
                     widget.onSelected(place, isTo);
                     toAddress = place;
-                    setState(() {
-                    });
+                    setState(() {});
                   }, true)
                 ));
               },
@@ -120,10 +118,10 @@ class _RidePickerState extends State<RidePicker> {
                     Padding(
                       padding: EdgeInsets.only(left: 40, right: 50),
                       child: Text(
-                        "To",
+                        toAddress == null ? "To" : toAddress.name,
                         style: TextStyle(fontSize: 16, color: Color(0xff323643)),
                         overflow: TextOverflow.ellipsis,
-                        ),
+                      ),
                     )
                   ],
                 ),
