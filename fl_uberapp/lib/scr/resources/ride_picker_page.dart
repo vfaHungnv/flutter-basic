@@ -7,7 +7,7 @@ class RidePickerPage extends StatefulWidget {
   final Function(PlaceItemRes, bool) onSelected;
   final bool _isFromAddress;
   RidePickerPage(this.selectedAddress, this.onSelected, this._isFromAddress);
-  
+
   @override
   _RidePickerPageState createState() => _RidePickerPageState();
 }
@@ -18,7 +18,7 @@ class _RidePickerPageState extends State<RidePickerPage> {
 
   @override
   void initState() {
-    _addressController = TextEditingController(text: "");
+    _addressController = TextEditingController(text: widget.selectedAddress);
     super.initState();
   }
 
@@ -108,6 +108,7 @@ class _RidePickerPageState extends State<RidePickerPage> {
                           onTap: () {
                             print("On tap");
                             Navigator.of(context).pop();
+                            widget.onSelected(places.elementAt(index), widget._isFromAddress);
                           },
                         );
                       },

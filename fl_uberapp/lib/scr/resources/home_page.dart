@@ -11,7 +11,9 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   var _scaffoldKey = new GlobalKey<ScaffoldState>();
+  final Map<String, Marker> _markers = <String, Marker>{};
 
+  GoogleMapController _mapController;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -22,6 +24,9 @@ class _HomePageState extends State<HomePage> {
         child: Stack(
           children: <Widget>[
             GoogleMap(
+              onMapCreated: (GoogleMapController controller) {
+                _mapController = controller;
+              },
               initialCameraPosition: CameraPosition(
                 target: LatLng(10.7915178, 106.7271422),
                 zoom: 14.4746,
